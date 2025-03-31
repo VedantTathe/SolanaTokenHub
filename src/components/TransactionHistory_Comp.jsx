@@ -42,7 +42,7 @@ const TransactionHistory_Comp = () => {
   };
 
   return (
-    <div className="p-4 bg-white text-black min-h-screen flex flex-col items-center">
+    <div className="pt-25 p-4 bg-white text-black min-h-screen flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-4 text-center">Phantom Wallet Transactions</h1>
       {!publicKey ? (
         <p className="text-center text-red-500">Connect your wallet to view transactions</p>

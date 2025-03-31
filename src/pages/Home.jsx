@@ -93,10 +93,17 @@ const Home = () => {
                     }}
                   />
                 </>
+                
+      <div className="text-center py-6 text-gray-600">
+         Built with ❤️ By <a className="font-bold text-blue-500" href="https://vedanttathe.netlify.app">Vedant Tathe</a>
+      </div>
             </div>
+            
           </div>
         )}
+        
       </div>
+      
     </>
   );
 };

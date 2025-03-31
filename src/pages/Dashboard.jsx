@@ -118,7 +118,7 @@ const Dashboard = () => {
 
       {/* Footer */}
       <div className="text-center py-6 text-gray-600">
-        © {new Date().getFullYear()} Solana Dashboard | Built with ❤️
+        © {new Date().getFullYear()} Solana Dashboard | Built with ❤️ By <a className="font-bold text-blue-500" href="https://vedanttathe.netlify.app">Vedant Tathe</a>
       </div>
     </div>
   );

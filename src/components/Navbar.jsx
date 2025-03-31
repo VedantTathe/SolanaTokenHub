@@ -27,9 +27,9 @@ const Navbar = () => {
                 <Link to="/transfersol" className="nav-link text-gray-800 hover:text-purple-500">
                   Transfer SOL
                 </Link>
-                {/* <Link to="/history" className="nav-link text-gray-800 hover:text-purple-500">
+                <Link to="/history" className="nav-link text-gray-800 hover:text-purple-500">
                   Transaction History
-                </Link> */}
+                </Link>
               </>
             ) : (
               <Link to="/" className="nav-link text-gray-800 hover:text-purple-500">
@@ -83,13 +83,13 @@ const Navbar = () => {
             >
               Transfer SOL
             </Link>
-            {/* <Link
+            <Link
               to="/history"
               className="mobile-nav-link text-gray-800 hover:text-purple-500"
               onClick={() => setIsOpen(false)}
             >
               Transaction History
-            </Link> */}
+            </Link>
           </>
         ) : (
           <Link
