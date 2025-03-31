@@ -8,7 +8,6 @@ const TransferSOL = () => {
     
 
     return (
-        // <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] text-white">
         <div>
             <Navbar/>
             <div className="pt-25">

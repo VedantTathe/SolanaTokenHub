@@ -33,7 +33,7 @@ const Dashboard = () => {
         <div className="md:col-span-1 space-y-2 md:space-y-10">
           {/* Wallet Balance */}
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <h2 className="text-lg font-semibold text-gray-700">💰 Wallet Balance</h2>
+            <h2 className="text-lg font-semibold text-gray-700">Wallet Balance</h2>
             <div className="mt-4">
               <WalletBalance />
             </div>
@@ -41,7 +41,7 @@ const Dashboard = () => {
 
           {/* Token List */}
           <div className="hidden md:block bg-white shadow-lg rounded-lg p-6">
-            <h2 className="text-lg font-semibold text-gray-700">📜 Your Tokens</h2>
+            <h2 className="text-lg font-semibold text-gray-700">Your Tokens</h2>
             <TokenList />
           </div>
         </div>

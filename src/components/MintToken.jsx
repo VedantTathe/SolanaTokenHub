@@ -17,6 +17,7 @@ const MintToken = () => {
   const [mintKeypair, setMintKeypair] = useState(null);
   const [amount, setAmount] = useState("");
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(null);
 
   // Fetch mint list initially and every 5 seconds
   useEffect(() => {
@@ -44,7 +45,7 @@ const MintToken = () => {
 
   const handleMint = async () => {
     if (!publicKey || !mintKeypair || !amount || isNaN(amount) || amount <= 0) {
-      toast.error("❌ Please select a mint and enter a valid amount.");
+      toast.error("Please select a mint and enter a valid amount.");
       return;
     }
 
@@ -69,9 +70,10 @@ const MintToken = () => {
       const mintSignature = await sendTransaction(mintTx, connection);
       await connection.confirmTransaction(mintSignature, "confirmed");
 
-      toast.success(`✅ Successfully Minted ${amount} Tokens!`);
+      setSuccess(true);
+      toast.success(`Successfully Minted ${amount} Tokens!`);
     } catch (error) {
-      console.error("❌ Minting Failed:", error);
+      console.error("Minting Failed:", error);
       toast.error("Error: " + error.message);
     }
     setLoading(false);
@@ -115,6 +117,9 @@ const MintToken = () => {
         >
           {loading ? <Loader className="animate-spin" /> : "Mint Token"}
         </button>
+          <p className="text-green-600 text-lg pt-5">
+          {success == null ? " " : 
+        `${success ? 'Successfully Minted the Token ..!' : 'Something went wrong'}`}</p>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { Connection, PublicKey } from "@solana/web3.js";
 import TransactionHistory_Comp from "../components/TransactionHistory_Comp";
 import Navbar from "../components/Navbar";
 
-// TransactionHistory Component
+
 const TransactionHistory = () => {
 
   return (

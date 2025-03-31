@@ -43,11 +43,11 @@ const CreateToken = () => {
 
   const handleCreateToken = async () => {
     if (!publicKey || !sendTransaction) {
-      toast.error("❌ Connect your wallet first!");
+      toast.error("Connect your wallet first!");
       return;
     }
     if (!tokenName.trim()) {
-      toast.error("❌ Please enter a token name.");
+      toast.error("Please enter a token name.");
       return;
     }
 
@@ -123,9 +123,9 @@ const CreateToken = () => {
 
       setSuccess(true);
     } catch (error) {
-      console.error("❌ Token creation failed:", error);
+      console.error("Token creation failed:", error);
       toast.error("Error: " + error.message);
-      addStep("❌ Token creation failed.");
+      addStep("Token creation failed.");
     } finally {
       setLoading(false);
     }
