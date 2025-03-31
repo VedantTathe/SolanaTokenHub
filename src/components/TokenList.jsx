@@ -55,28 +55,21 @@ const TokenList = () => {
   // Auto-refresh every 30 seconds
   useEffect(() => {
     fetchTokens();
-    const interval = setInterval(fetchTokens, 30000);
+    const interval = setInterval(fetchTokens, 5000);
     return () => clearInterval(interval);
   }, [publicKey]);
 
   return (
     <>
       <h2 className="pt-2 text-2xl font-semibold text-gray-800 mb-4">
-        My Tokens
+      {loading ? "Fetching..." : "My Tokens"}
       </h2>
-
-      <button
-        onClick={fetchTokens}
-        className={`bg-purple-600 hover:bg-purple-700 text-white py-3 px-8 rounded-xl font-semibold transition duration-200 ease-in-out shadow-md ${
-          loading ? "opacity-50 cursor-not-allowed" : ""
-        }`}
-        disabled={loading}
-      >
-        {loading ? "Fetching..." : "Refresh Tokens"}
-      </button>
-
+    
       {tokens.length > 0 ? (
-        <div className="mt-6 w-full p-4 bg-gray-50 rounded-lg shadow-md overflow-x-hidden max-h-screen overflow-y-auto text-wrap">
+         
+        <div className={`mt-6 w-full p-4 bg-gray-50 rounded-lg shadow-md overflow-x-hidden max-h-screen overflow-y-auto text-wrap
+          ${loading ? "opacity-50 cursor-not-allowed":""}`}>
+
           <ul className="space-y-3">
             {tokens.map((token, index) => (
               <li

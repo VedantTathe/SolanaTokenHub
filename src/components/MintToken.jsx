@@ -18,9 +18,18 @@ const MintToken = () => {
   const [amount, setAmount] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // Fetch mint list initially and every 5 seconds
   useEffect(() => {
-    const storedMints = JSON.parse(localStorage.getItem("mintTokens")) || [];
-    setMintList(storedMints);
+    const fetchMintList = () => {
+      const storedMints = JSON.parse(localStorage.getItem("mintTokens")) || [];
+      setMintList(storedMints);
+    };
+
+    fetchMintList(); // Initial fetch
+
+    const interval = setInterval(fetchMintList, 5000); // Refresh every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
   const handleMintSelection = (e) => {
