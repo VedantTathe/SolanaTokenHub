@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import SolanaLogo from "../assets/images/Solana.png"; // Import the image
+import SolanaModel from "../components/SolanaModel";
 
 const Home = () => {
   const { connected, wallet } = useWallet();
@@ -28,11 +29,12 @@ const Home = () => {
       <div className="min-h-screen bg-gradient-to-br from-[#ffffff] via-[#f0f4f8] to-[#e2e8f0] text-gray-800 flex items-center justify-center">
         <div className="mt-20 md: mt-2 flex flex-col md:flex-row items-center align-content-center justify-content-center text-center p-6 space-x-6">
           {/* Solana Image on the Left with Adjusted Position */}
-          <img
+          {/* <img
             src={SolanaLogo}
             alt="Solana Logo"
             className="w-60 h-60 md:w-80 md:h-80 object-contain"
-          />
+          /> */}
+          <SolanaModel/>
 
           {/* Content on the Right */}
           <div className="flex flex-col justify-center items-center">
