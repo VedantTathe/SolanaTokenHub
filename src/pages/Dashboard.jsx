@@ -7,6 +7,7 @@ import CreateToken from "../components/CreateToken";
 import TokenList from "../components/TokenList";
 import MintToken from "../components/MintToken";
 import TransferSOL_Comp from "../components/TransferSOL_Comp";
+import TransactionHistory_Comp from "../components/TransactionHistory_Comp";
 
 const Dashboard = () => {
   const { publicKey, connected } = useWallet();
@@ -49,8 +50,9 @@ const Dashboard = () => {
         <div className="md:col-span-2 space-y-6 w-full">
           {/* Token Manager Tabs */}
           <div className="bg-white shadow-lg rounded-lg p-6">
-            <h1 className="text-2xl font-bold text-gray-800 text-2xl font-bold mb-4 text-center">Token Manager</h1>
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-6 mb-4">
+            <h1 className="text-2xl font-bold text-gray-800 text-2xl font-bold  text-center">Token Manager</h1>
+            <p className="text-xl text-center py-2 mb-3">Select one tab from below</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
               {/* Token Manager Block */}
               <div 
                 onClick={() => setSelectedSection("tokenManager")}
@@ -72,14 +74,14 @@ const Dashboard = () => {
               </div>
 
               {/* Transaction History Block */}
-              {/* <div 
+              <div 
                 onClick={() => setSelectedSection("transactionHistory")}
                 className={`${
                   selectedSection === "transactionHistory" ? "bg-purple-500 text-white" : "bg-gray-300 text-gray-700"
                 } p-6 rounded-lg text-center cursor-pointer`}
               >
                 <h3 className="text-xl font-semibold">Transaction History</h3>
-              </div> */}
+              </div>
             </div>
           </div>
 
@@ -99,12 +101,12 @@ const Dashboard = () => {
             </div>
           )}
 
-          {/* {selectedSection === "transactionHistory" && (
+          {selectedSection === "transactionHistory" && (
             <div className="bg-white shadow-lg rounded-lg p-6">
               <h2 className="text-lg font-semibold text-gray-700">📜 Transaction History</h2>
               <TransactionHistory_Comp />
             </div>
-          )} */}
+          )}
         </div>
 
         {/* Token List (Mobile View) */}
